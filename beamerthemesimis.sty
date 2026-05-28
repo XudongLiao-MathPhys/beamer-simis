@@ -1,0 +1,55 @@
+\mode<presentation>
+
+\RequirePackage{lastpage,graphicx,tikz,setspace}
+\usetikzlibrary{positioning}
+
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{blue}{RGB}{31,91,166}
+\usecolortheme[RGB={31,91,166}]{structure}
+
+% Titlepage
+\setbeamertemplate{title page}{
+  \includegraphics[height=0.09\textheight]{simis-logo-titlepage.png}
+  \hskip3em
+    \includegraphics[height=0.09\textheight]{fudan-logo-titlepage.pdf}
+  \vskip3em
+  \begin{spacing}{1.2}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf\inserttitle}
+  \end{spacing}
+  \tikz \draw[ultra thick,line cap=round,color=blue!80] (0,0) -- (\textwidth-1.6pt,0);
+  \vskip3em
+  {\usebeamercolor[fg]{title}\insertauthor}
+  \vskip0.3em
+  \insertinstitute
+  \vskip0.3em
+  \insertdate
+}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \path (0,0) -- (\paperwidth,\paperheight);
+    \node [opacity=0.05] at (0.8\paperwidth,0.25\paperheight) {\includegraphics[width=11cm]{simis-logo-background.png}};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=3em,dp=1em,left]{}
+    \hspace{1em}
+    \thepage\hspace{0.2em}/\hspace{0.2em}\pageref{LastPage}
+    \ifnum\thepage>1
+      \hspace{1em}
+      {\usebeamercolor[fg]{title}\insertshorttitle}
+      \hspace{1em}
+      \insertshortauthor
+    \fi
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{itemize subitem}[square]
+
+\setbeamertemplate{blocks}[framed]
+
+\mode<all>
