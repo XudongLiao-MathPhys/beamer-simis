@@ -2,4 +2,4 @@
 
 An unofficial beamer theme for SIMIS.
 
-![](images/example.png)
+![](./images/example.png)
